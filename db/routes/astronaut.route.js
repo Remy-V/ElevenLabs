@@ -11,7 +11,7 @@ router.get("/", (req, res, next) => {
     astronautSchema.find()
     .then((data) => {
         if (data) { return res.json(data); }
-        else { return next("Error while fetching astronauts"); }
+        return next("Error while fetching astronauts");
     })
 });
 
@@ -21,7 +21,7 @@ router.post("/create-astronaut", (req, res, next) => {
     astronautSchema.create(req.body)
     .then((data) => {
         if (data) { return res.json(data); } 
-        else { return next("Error while creating an astronaut"); }
+        return next("Error while creating an astronaut");
     });
 }); 
 
@@ -31,7 +31,7 @@ router.get("/astronaut-list", (req, res, next) => {
     astronautSchema.find()
     .then((data) => {
         if (data) { return res.json(data); }
-        else { return next("Error while retrieving all astronauts"); }
+        return next("Error while retrieving all astronauts");
     })
 })
 
@@ -41,7 +41,7 @@ router.get("/edit-astronaut/:id", (req, res, next) => {
     astronautSchema.findById(req.params.id)
     .then((data) => {
         if (data) { return res.json(data); }
-        else { return next("Error while retrieving this astronaut"); }
+        return next("Error while retrieving this astronaut");
     });
 });
 
@@ -52,7 +52,7 @@ router.put("/edit-astronaut/:id", (req, res, next) => {
     astronautSchema.findByIdAndUpdate(req.params.id, { $set: req.body })
     .then((data) => {
         if (data) { return res.json(data) }
-        else { return next("Error while updating this astronaut") }
+        return next("Error while updating this astronaut");
     });
 }); 
 
@@ -62,7 +62,7 @@ router.delete("/delete-astronaut/:id", (req, res, next) => {
     astronautSchema.findByIdAndRemove(req.params.id)
     .then((data) => { 
         if (data) {return res.status(200).json({ msg: data })}
-        else { return next("Error while deleting this astronaut") }
+        return next("Error while deleting this astronaut");
         
     });
 });

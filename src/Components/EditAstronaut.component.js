@@ -26,6 +26,7 @@ const EditAstronaut = (attr) => {
         .then((res) => {
             if (res.status === 200) { 
                 alert("Astronaut successfully updated");
+                // BAD REDIRECT
                 window.location.replace("http://localhost:3001/astronaut-list");
             } else {
                 console.log("flag error");

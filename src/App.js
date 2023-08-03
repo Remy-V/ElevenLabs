@@ -51,21 +51,17 @@ const App = () => {
           <Row>
             <Col md={12}>
               <div className="wrapper">
-                {/* <Button variant="outline-primary" path="/create-astronaut">Add an Astronaut</Button> */}
                 <Routes>
                   <Route exact path="/" 
                     element={<Homepage />} />
-
 
 
                   <Route path="/create-astronaut" 
                     element={<CreateAstronaut />} />
 
 
-
                   <Route path="/edit-astronaut/:id" 
                     element={<EditAstronaut />} />
-
 
                     
                   <Route path="/astronaut-list" 

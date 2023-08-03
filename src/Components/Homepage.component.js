@@ -1,7 +1,7 @@
 // import { Axios } from "axios";
 import React from "react";
 
-const config = require('../config.json');
+// const config = require('../config.json');
 // const url = "http" + (config.https ? "s" : "") + "://" + config.host + ((config.port !== 0) ? (":" + config.port) : "");
 
 

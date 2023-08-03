@@ -9,11 +9,13 @@ const url = "http" + (config.https ? "s" : "") + "://" + config.host + ((config.
 
 const AstronautDetails = (attr) => {
     const {_id, firstname, lastname } = attr.obj; // TODO : ADD MORE ATTR
+
+
+    // DELETE FUNCTION 
     const deleteAstronaut = () => {
         axios.delete(url+"/delete-astronaut/" + _id)
         .then((res) => {
             if (res.status === 200) {
-                // TODO
                 alert("Astronaut successfully deleted");
                 window.location.reload();
             } else {

@@ -17,8 +17,9 @@ const CreateAstronaut = () => {
             // wikiPage: ''
         });
     const onSubmit = AstronautObject => {
-        console.log("Component");
-        console.log(AstronautObject);
+
+        // CREATE A NEW ASTRONAUT
+
         Axios.post(
             url+'/create-astronaut', AstronautObject)
             .then(res => {
@@ -27,7 +28,8 @@ const CreateAstronaut = () => {
             }).catch(err => {
                 alert('Unable to create this Astronaut');
                 console.log(err);
-        }); 
+        });
+
     }
 
     return(
